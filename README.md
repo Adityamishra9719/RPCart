@@ -78,7 +78,7 @@ Please adhere to this project's `code of conduct`.
 
 ## Work to do 
 
-#### <ol> 1. Improve the ui/ux of the projeect .</ol>
+#### <ol> 1. Improve the ui/ux of the project .</ol>
 #### <ol> 2. Find bug and also find solution for the same and raise issue  .</ol>
 
 
