@@ -14,6 +14,11 @@
 ## Deployment
 
 
+### MONGO DB FILE 
+ Upload the Product.json file in your mongodb Ecommerce section that will be created as you start the project 
+ As there will be produt you can see for beeter understanding .
+
+
 ### Environment Variables
 
 #### To run this project, you will need to add the following environment variables to your config.env file in backend
