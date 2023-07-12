@@ -1,0 +1,307 @@
+[{
+  "_id": {
+    "$oid": "63eb96502213bb62d9ecb17d"
+  },
+  "name": "laptop",
+  "description": "asus latop",
+  "price": 2000,
+  "ratings": 5,
+  "images": [
+    {
+      "public_id": "products/dlsz2id4mblaiev3tixa",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676383830/products/dlsz2id4mblaiev3tixa.jpg",
+      "_id": {
+        "$oid": "63eb96502213bb62d9ecb17e"
+      }
+    }
+  ],
+  "category": "laptop",
+  "stock": 100,
+  "numofReviews": 1,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676383627925"
+    }
+  },
+  "reviews": [
+    {
+      "user": {
+        "$oid": "638332bbb8f2fe121f658cea"
+      },
+      "name": "Aditya  mishra",
+      "rating": 5,
+      "comment": "",
+      "_id": {
+        "$oid": "63eb9a86af7067757aa41f74"
+      }
+    }
+  ],
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "63eb9745af7067757aa41ef8"
+  },
+  "name": "analog-classic-watch",
+  "description": "analog-classic premium watch",
+  "price": 600,
+  "ratings": 4,
+  "images": [
+    {
+      "public_id": "products/eh9zojtiy2yg8izcu7gt",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676384076/products/eh9zojtiy2yg8izcu7gt.jpg",
+      "_id": {
+        "$oid": "63eb9745af7067757aa41ef9"
+      }
+    }
+  ],
+  "category": "Appliances",
+  "stock": 87,
+  "numofReviews": 1,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676383839732"
+    }
+  },
+  "reviews": [
+    {
+      "user": {
+        "$oid": "638332bbb8f2fe121f658cea"
+      },
+      "name": "Aditya  mishra",
+      "rating": 4,
+      "comment": "nice band",
+      "_id": {
+        "$oid": "63eb9a9aaf7067757aa41f88"
+      }
+    }
+  ],
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "63eb98d3af7067757aa41f19"
+  },
+  "name": "Puma Mens Tshirts",
+  "description": "Puma Mens Printed Dri-Fit T-Shirts, Size: S To XL ",
+  "price": 300,
+  "ratings": 4,
+  "images": [
+    {
+      "public_id": "products/huo0b9x0ippxjtymosqc",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676384473/products/huo0b9x0ippxjtymosqc.jpg",
+      "_id": {
+        "$oid": "63eb98d3af7067757aa41f1a"
+      }
+    }
+  ],
+  "category": "Tshirt",
+  "stock": 89,
+  "numofReviews": 1,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676383839732"
+    }
+  },
+  "reviews": [
+    {
+      "user": {
+        "$oid": "638332bbb8f2fe121f658cea"
+      },
+      "name": "Aditya  mishra",
+      "rating": 4,
+      "comment": "nice quality",
+      "_id": {
+        "$oid": "63eb9a77af7067757aa41f61"
+      }
+    }
+  ],
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "63ee5877032e1bca43ba2220"
+  },
+  "name": "bag",
+  "description": "Bag",
+  "price": 600,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/rsa7xh3useywezqoodij",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676564607/products/rsa7xh3useywezqoodij.jpg",
+      "_id": {
+        "$oid": "63ee5877032e1bca43ba2221"
+      }
+    }
+  ],
+  "category": "Cloths",
+  "stock": 43,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676564430527"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ee5c52ea231e653ae4a3ac"
+  },
+  "name": "Nike shoes",
+  "description": "Nike sues ",
+  "price": 6000,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/rmpmvebsagmymqiqesny",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676565594/products/rmpmvebsagmymqiqesny.jpg",
+      "_id": {
+        "$oid": "63ee5c52ea231e653ae4a3ad"
+      }
+    }
+  ],
+  "category": "Footwear",
+  "stock": 450,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676565166931"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ee5d24ea231e653ae4a3e6"
+  },
+  "name": "Osjs 4 feet Very Cute Long Soft Huggable American Style Teddy Bear - 120.5 cm  (Red)",
+  "description": "Osjs 4 feet Very Cute Long Soft Huggable American Style Teddy Bear - 120.5 cm  (Red)\nCharacter: teddy bear\nWashable\nAge: 3+ Years",
+  "price": 498,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/byoo7oghjzlbvtzudzwp",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676565798/products/byoo7oghjzlbvtzudzwp.webp",
+      "_id": {
+        "$oid": "63ee5d24ea231e653ae4a3e7"
+      }
+    }
+  ],
+  "category": "Tshirt",
+  "stock": 180,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676565166931"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ee5dbdea231e653ae4a3fc"
+  },
+  "name": "SAMSUNG Galaxy S23 Ultra 5G (Cream, 512 GB)  (12 GB RAM)",
+  "description": "12 GB RAM | 512 GB ROM\n17.27 cm (6.8 inch) Quad HD+ Display\n200MP + 10MP + 12MP + 10MP | 12MP Front Camera\n5000 mAh Lithium Ion Battery\nQualcomm Snapdragon 8 Gen 2 Processor",
+  "price": 20000,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/fjwqy2bysgthx4iryh66",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676565957/products/fjwqy2bysgthx4iryh66.webp",
+      "_id": {
+        "$oid": "63ee5dbdea231e653ae4a3fd"
+      }
+    }
+  ],
+  "category": "SmartPhones",
+  "stock": 19,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676565166931"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ee5e6aea231e653ae4a413"
+  },
+  "name": "Ak fashion mall  Pack of 3 Women Printed, Checkered Crepe Straight Kurta  (Multicolor)",
+  "description": "Ideal For - Women\nLength Type   - Calf Length\nBrand Color- MULTICOLOR\nOccasion - Casual\nPattern - Printed, Checkered\nType - Straight\nFabric - Crepe\nNeck - Round Neck",
+  "price": 699,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/ar4csyywybmuol3vy3kg",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676566130/products/ar4csyywybmuol3vy3kg.webp",
+      "_id": {
+        "$oid": "63ee5e6aea231e653ae4a414"
+      }
+    }
+  ],
+  "category": "Cloths",
+  "stock": 0,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676565166931"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ee623dea231e653ae4a5da"
+  },
+  "name": "Canon EOS 3000D DSLR Camera 1 Camera Body, 18 - 55 mm Lens  (Black)#JustHere",
+  "description": "\nIf you are a photography enthusiast, then the Canon EOS 3000D DSLR Camera is a must-have gadget. Featuring an 18 MP (APS-C) CMOS sensor and the DIGIC 4+ imaging processor, you can capture amazing photos of your subject at all times, even in low-light conditions. Moreover, the remote Live View function lets you control this camera remotely using your smartphone so you can capture amazing photos even from a distance.\nSelf-Timer | Type C and Mini HDMI, |9 Auto Focus Points | 35x Optical Zoom., Effective Pixels: 18 MP APS-C CMOS sensor-which is 25 times larger than a typical Smartphone sensor., WiFi | Full HD | Video Recording at 1080 p on 30fps.\nEffective Pixels: 18 MP\nSensor Type: CMOS\nWiFi Available\nFull HD",
+  "price": 20000,
+  "ratings": 0,
+  "images": [
+    {
+      "public_id": "products/ru9ckhyizl838wtcoy9s",
+      "url": "https://res.cloudinary.com/duwl14elv/image/upload/v1676567110/products/ru9ckhyizl838wtcoy9s.webp",
+      "_id": {
+        "$oid": "63ee623dea231e653ae4a5db"
+      }
+    }
+  ],
+  "category": "Camera",
+  "stock": 78,
+  "numofReviews": 0,
+  "user": {
+    "$oid": "638332bbb8f2fe121f658cea"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1676565166931"
+    }
+  },
+  "reviews": [],
+  "__v": 0
+}]
