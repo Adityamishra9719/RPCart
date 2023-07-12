@@ -15,7 +15,7 @@
 
 
 ### MONGO DB FILE 
- Upload [``` RPCart/products.json ```](http="RPCart/products.json") file in your mongodb Ecommerce section that will be created as you start the project 
+ Upload [``` RPCart/products.json ```](./products.json) file in your mongodb Ecommerce section that will be created as you start the project 
  As there will be produt you can see for beeter understanding .
 
 
