@@ -42,7 +42,7 @@ import UpdateUser from "./component/admin/UpdateUser"
 import ProductReviews from "./component/admin/ProductReviews"
 import Contact from "./component/layout/Contact/Contact.js";
 import About from "./component/layout/About/About.js";
-import NotFound from "./component/layout/Not Found/NotFound";
+// import NotFound from "./component/layout/Not Found/NotFound";
 
 
 // "proxy": "http://172.16.6.217:4000"
