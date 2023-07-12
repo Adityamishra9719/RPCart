@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+/* 
+body{
+    background-color: aqua;
+    font-family: 'Merriweather', serif;
+}  */
+
+.updateProfileContainer{
+    height: 90vh;
+    width: 95vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.updateProfileBox {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+ h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color:aqua;
+}
+
+.updateProfileBox .updateProfileform{
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background:rgba(0 ,0 ,0 ,0.7);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 9px 31px rgba(0,0,0,255);
+}
+.updateProfileform::before{
+    content: " ";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+    transform-origin: bottom left;
+    transform:skew(-26deg);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.updateProfileform .input-box{
+    position: relative;
+}
+
+.updateProfileform .input-box input{
+    width: 100%;
+    padding:10px ;
+    font-size:1rem;
+    letter-spacing :1px;
+    margin-bottom :30px;
+    border:none;
+    border-bottom:1px solid white; 
+    outline: none;
+    background-color: transparent;
+    color:inherit;
+}
+
+.updateProfileform .input-box label{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+} 
+
+.updateProfileform .input-box input:focus + label, .updateProfileform .input-box input:valid + label{
+ transform: translateY(-26px);
+ color:aqua;
+ font-size: .8rem;
+}
+
+
+#updateProfileImage{
+    /* position: relative; */
+    display: flex;
+    padding: 2%;
+    
+}
+
+
+#updateProfileImage > img{
+    width: 3vmax;
+    border-radius:100%;
+    margin-left: -13px;
+} 
+
+#updateProfileImage > input{
+    padding: 0%;
+    display: flex;
+}
+
+#updateProfileImage > input::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    z-index: 2;
+    height: 5vh;
+    border:none; 
+    margin: 0 0 1% 2%;
+    font:400 1vmax cursive;
+    transition: all 0.5s;
+    padding:0 1vmax;
+    color :rgba(0,0,0,0.623);
+    background-color: aliceblue;
+}
+#updateProfileImage > input::file-selector-button:hover{
+    background:grey;
+} 
+
+
+.updateProfileBtn{
+    display: block;
+    margin-top: 10px;
+    margin-left:auto;
+    background:aqua;
+    border:none;
+    outline:none;
+    font-size:.8rem;
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:9px 15px;
+    border-radius: 6px;
+    cursor:pointer;
+}
+
+
+.updateProfileBtn:hover{
+    color: red;
+    padding: 10px 16px;
+}
+
+
+
+@media screen and (max-width:600px){
+    .updateProfileContainer{
+        height: 100vh;
+        width: 100vw;
+        transition: all 0.5s;
+    }
+    
+}
+@media screen and (max-width:400px){
+    .updateProfileContainer{
+        height: 100vh;
+        width: 110vw;
+        transition: all 0.5s;
+    }
+    #updateProfileImage > img{
+        width: 2vmax;
+        border-radius:100%;
+        margin-left: -13px;
+    } 
+}
