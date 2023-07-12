@@ -20,16 +20,15 @@
 ```bash 
 ./backend/config/config.env
  ```
+#### Get all items
 
-`STRIPE_API_KEY ` - From Stripe Api Site 
-
-`STRIPE_SECRET_KEY ` - From Stripe Api Site 
-
-`CLOUDINARY_NAME` - From cloudinary site 
-
-`CLOUDINARY_API_KEY` -  From cloudinary site 
-
-`CLOUDINARY_API_SECRET` - From cloudinary site 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `STRIPE_API_KEY `  | `string` | **Required**.- From Stripe Api Site  for payment processors|
+|`STRIPE_SECRET_KEY `| `string` |**Required**.- From Stripe Api Site for payment processors|
+|`CLOUDINARY_NAME` | `string` |**Required**.-  From cloudinary site for image uploading |
+|`CLOUDINARY_API_KEY` | `string` |**Required**.-  From cloudinary site for image uploading| 
+|`CLOUDINARY_API_SECRET` | `string` |**Required**.-  From cloudinary site for image uploading| 
 
 
 ### Now to deploy this project follow te following processors :-
