@@ -77,9 +77,7 @@
 
 ## Contributing
 
-Contributions are always welcome!
-
-Please adhere to this project's `code of conduct`.
+Contributions are always welcome !😌
 
 ## Work to do 
 
