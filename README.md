@@ -38,6 +38,7 @@
 
 ### Now to deploy this project follow te following processors :-
 
+0. Fork the project 
 
 1. Clone the project
 
