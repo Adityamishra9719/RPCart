@@ -36,7 +36,7 @@
 |`CLOUDINARY_API_SECRET` | `string` |**Required**.-  From cloudinary site for image uploading| 
 
 
-### Now to deploy this project follow te following processors :-
+### Contributing Guidelines :-
 
 0. Fork the project 
 
@@ -76,24 +76,17 @@
 
 
 
-## Contributing
+<div align=center >
+  
+| ![Aditya Kumar Mishra](https://github.com/adityakmrmishra.png?size=100)  | ![Arshad Khan](https://github.com/marshadkhn.png?size=100) | ![Ashish Gupta](https://github.com/l-ashish-gupta-l.png?size=100) |
+| :----------------------------------------------------------------------: | :--------------------------------------------------------:  |  :--------------------------------------------------------------: |
+| [Aditya Kumar Mishra](https://github.com/adityakmrmishra)    |   [Arshad /khan ](https://github.com/marshadkhn)    | [Ashish Gupta](https://github.com/l-ashish-gupta-l)     |   
 
-Contributions are always welcome !😌
+</div>
 
-## Work to do 
+### **REACH OUT TO ME**
+[![twitter](https://img.shields.io/badge/twitter-0A66C2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/adityakmrmishra)
 
-#### <ol> 1. Improve the ui/ux of the project .</ol>
-#### <ol> 2. Find bug and also find solution for the same and raise issue  .</ol>
-
-
-## Let's Connect 🤝
-- [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-kumar-mishra-6a025b216)
- 
- - [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Aditya_m037)
-
-
-- [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/adityamishra842/)  
-
-## Maintainer
-
-- [ADITYA](https://github.com/Adityamishra9719)
+## ❤️ Support 
+  
+ Don't forget to leave a star ⭐️. Its free 😉
