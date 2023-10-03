@@ -3,6 +3,7 @@ import playStore from "../../../images/playStore.png"
 import "./Footer.css"
 
 const Footer=()=> {
+    const year=new Date().getFullYear();
     return (
         <footer id="footer">
             <div className="leftFooter">
@@ -15,7 +16,7 @@ const Footer=()=> {
                 <h1>RPCart</h1>
                 <p>High Quality is Our First Priority</p>
 
-                <p>Copyright 2022 &copy; AdityaMishra</p>
+                <p>Copyright {year} &copy; AdityaMishra</p>
             </div>
 
 
