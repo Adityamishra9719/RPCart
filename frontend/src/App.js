@@ -54,10 +54,14 @@ function App() {
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   
   const getStripeApiKey = useCallback(async () => {
-    const response = await axios.get(`${BACKEND_URL}/api/v1/stripeapikey`, {
-      withCredentials: true,
-    });
-    setStripeApiKey(response.data.stripeApiKey);
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/v1/stripeapikey`, {
+        withCredentials: true,
+      });
+      setStripeApiKey(response.data.stripeApiKey);
+    } catch (error) {
+      console.error("Error fetching Stripe API key:", error);
+    }
   }, [BACKEND_URL]); // Dependency if BACKEND_URL can change
 
   useEffect(() => {

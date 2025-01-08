@@ -113,7 +113,7 @@ const OrderList = ({ history }) => {
         orders.forEach((item) => {
             rows.push({
                 id: item._id,
-                itemsQty: item.orderItems.quantity,
+                itemsQty: item.orderItems.reduce((acc, item) => acc + item.quantity, 0),
                 amount: item.totalPrice,
                 status: item.orderStatus,
             });

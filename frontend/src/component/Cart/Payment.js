@@ -50,8 +50,10 @@ const Payment = () => {
         e.preventDefault();
         console.log("Submit handler triggered");
 
-        payBtn.current.disabled = true;
-        console.log("Payment button disabled");
+        if (payBtn.current) {
+            payBtn.current.disabled = true;
+            console.log("Payment button disabled");
+        }
 
         try {
             const config = {
@@ -91,7 +93,9 @@ const Payment = () => {
             });
 
             if (result.error) {
-                payBtn.current.disabled = false;
+                if (payBtn.current) {
+                    payBtn.current.disabled = false;
+                }
                 console.log("Payment error", result.error.message);
                 alert.error(result.error.message);
             } else {
@@ -112,7 +116,9 @@ const Payment = () => {
                 }
             }
         } catch (error) {
-            payBtn.current.disabled = false;
+            if (payBtn.current) {
+                payBtn.current.disabled = false;
+            }
             console.log("Catch block error", error.response.data.message);
             alert.error(error.response.data.message);
         }
