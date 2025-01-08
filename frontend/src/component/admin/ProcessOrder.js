@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import MetaData from "../layout/MetaData";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import SideBar from "./Sidebar";
 import {
@@ -16,9 +16,13 @@ import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../constants/orderConstants";
 import "./processOrder.css";
 
-const ProcessOrder = ({ history, match }) => {
+const ProcessOrder = ({ history }) => {
+    const { id } = useParams();
     const { order, error, loading } = useSelector((state) => state.orderDetails);
     const { error: updateError, isUpdated } = useSelector((state) => state.order);
+
+    const dispatch = useDispatch();
+    const alert = useAlert();
 
     const updateOrderSubmitHandler = (e) => {
         e.preventDefault();
@@ -26,12 +30,9 @@ const ProcessOrder = ({ history, match }) => {
         const myForm = new FormData();
 
         myForm.set("status", status);
-
-        dispatch(updateOrder(match.params.id, myForm));
+        dispatch(updateOrder(id, myForm));
+  
     };
-
-    const dispatch = useDispatch();
-    const alert = useAlert();
 
     const [status, setStatus] = useState("");
 
@@ -48,9 +49,9 @@ const ProcessOrder = ({ history, match }) => {
             alert.success("Order Updated Successfully");
             dispatch({ type: UPDATE_ORDER_RESET });
         }
-
-        dispatch(getOrderDetails(match.params.id));
-    }, [dispatch, alert, error, match.params.id, isUpdated, updateError]);
+        dispatch(getOrderDetails(id));
+    }, [dispatch, alert, error, id, isUpdated, updateError]);
+   
 
     return (
         <Fragment>

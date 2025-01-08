@@ -7,7 +7,7 @@ import {
     getAdminProduct,
     deleteProduct,
 } from "../../actions/productAction";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
@@ -18,7 +18,7 @@ import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 
 const ProductList = ({ history }) => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const alert = useAlert();
 
     const { error, products } = useSelector((state) => state.products);
@@ -44,7 +44,7 @@ const ProductList = ({ history }) => {
 
         if (isDeleted) {
             alert.success("Product Deleted Successfully");
-            history.push("/admin/dashboard");
+            navigate("/admin/dashboard");
             dispatch({ type: DELETE_PRODUCT_RESET });
         }
 

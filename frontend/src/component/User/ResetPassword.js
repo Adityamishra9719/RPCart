@@ -5,12 +5,14 @@ import { useSelector,useDispatch} from "react-redux"
 import {clearErrors,resetPassword} from "../../actions/userAction"
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ResetPassword = ({history,match}) => {
+const ResetPassword = ({history}) => {
     const dispatch = useDispatch();
     const alert = useAlert();
-
-    const {error,success, loading }= useSelector((state) => state.forgotPassword);
+    const navigate = useNavigate();
+    const { error, success, loading } = useSelector((state) => state.forgotPassword);
+    const { token } = useParams();
 
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -23,8 +25,7 @@ const ResetPassword = ({history,match}) => {
         const myForm = new FormData();
 
         myForm.set("password",password);
-        myForm.set("confirmPassword",confirmPassword);
-        dispatch(resetPassword(match.params.token ,myForm));
+        dispatch(resetPassword(token, myForm));
     };
 
 
@@ -37,7 +38,7 @@ const ResetPassword = ({history,match}) => {
         if(success){
             alert.success("Password Updated Successfully");
 
-            history.push("/login");
+            navigate("/login");
 
         }
     },[dispatch,error,alert,history,success]);

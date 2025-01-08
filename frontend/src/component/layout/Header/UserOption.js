@@ -7,7 +7,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import {logout} from "../../../actions/userAction";
 import { useDispatch,useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ import { useDispatch,useSelector } from 'react-redux';
 const UserOptions = ({user}) => {
     const {cartItems} = useSelector((state) => state.cart);
     const [open ,setOpen] = useState(false);
-    const history = useHistory();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
 
@@ -35,22 +35,22 @@ const UserOptions = ({user}) => {
         options.unshift({ icon: <DashboardIcon/>, name: "Dashboard", func : dashboard})
     }
 
-
     function dashboard() {
-        history.push("/admin/dashboard")
+        navigate("/admin/dashboard");
     }
-
+    
     function orders() {
-        history.push("/orders")
+        navigate("/orders");
     }
-
+    
     function cart() {
-        history.push("/cart")
+        navigate("/cart");
     }
-
+    
     function account() {
-        history.push("/account")
+        navigate("/account");
     }
+    
 
     function logoutUser() {
         dispatch(logout());

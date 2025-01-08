@@ -9,7 +9,7 @@ import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
 import { useAlert } from "react-alert"
 import MetaData from '../layout/MetaData';
-
+import { useParams } from "react-router-dom";
 
 const categories = [
     "laptop",
@@ -22,7 +22,7 @@ const categories = [
 ]
 
 
-const Products = ({ match }) => {
+const Products = () => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -30,7 +30,9 @@ const Products = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [price, setPrice] = useState([0, 30000]);
     const [category, setCategory] = useState("");
-    const [ratings, setRatings] = useState(0)
+    const [ratings, setRatings] = useState(0);
+
+    const { keyword } = useParams(); // Use `useParams` to get `keyword`
 
     const {
         products,
@@ -41,25 +43,22 @@ const Products = ({ match }) => {
         filteredProductsCount,
     } = useSelector((state) => state.products);
 
-    // console.log(productsCount,resultPerPage,filteredProductsCount);
-
-    const keyword = match.params.keyword;
-
     const setCurrentPageNo = (e) => {
-        setCurrentPage(e)
+        setCurrentPage(e);
     };
 
     const priceHandler = (event, newPrice) => {
         setPrice(newPrice);
     };
-    let count = filteredProductsCount;
+
+    let count = productsCount; // Ensure count is set to productsCount
 
     useEffect(() => {
         if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
-        dispatch(getProduct(keyword, currentPage, price, category, ratings));
+        dispatch(getProduct(keyword, currentPage, price, category, ratings)); // Ensure currentPage is passed here
     }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
 

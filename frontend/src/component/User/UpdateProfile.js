@@ -6,11 +6,12 @@ import {clearErrors,updateProfile,loadUser} from "../../actions/userAction"
 import { useAlert } from "react-alert";
 import { UPDATE_PROFILE_RESET } from "../../constants/UserConstants";
 import MetaData from "../layout/MetaData";
+import { useNavigate } from "react-router-dom";
 
 
 
 const UpdateProfile = ({history}) => {
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
 
@@ -62,7 +63,7 @@ const UpdateProfile = ({history}) => {
             alert.success("Profile Updated Successfully");
             dispatch(loadUser());
 
-            history.push("/account");
+            navigate("/account");
 
             dispatch({
                 type: UPDATE_PROFILE_RESET,

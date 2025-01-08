@@ -6,9 +6,10 @@ import {clearErrors,updatePassword} from "../../actions/userAction"
 import { useAlert } from "react-alert";
 import { UPDATE_PASSWORD_RESET } from "../../constants/UserConstants";
 import MetaData from "../layout/MetaData";
+import { useNavigate } from "react-router-dom";
 
 const UpdatePassword = ({history}) => {
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
 
@@ -41,7 +42,7 @@ const UpdatePassword = ({history}) => {
         if(isUpdated){
             alert.success("Profile Updated Successfully");
 
-            history.push("/account");
+            navigate("/account");
 
             dispatch({
                 type: UPDATE_PASSWORD_RESET,

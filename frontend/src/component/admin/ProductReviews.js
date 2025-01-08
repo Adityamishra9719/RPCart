@@ -15,10 +15,11 @@ import Star from "@material-ui/icons/Star";
 
 import SideBar from "./Sidebar";
 import { DELETE_REVIEW_RESET } from "../../constants/productConstants";
+import { useNavigate } from "react-router-dom";
 
 const ProductReviews = ({ history }) => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const alert = useAlert();
 
     const { error: deleteError, isDeleted } = useSelector(
@@ -56,7 +57,7 @@ const ProductReviews = ({ history }) => {
 
         if (isDeleted) {
             alert.success("Review Deleted Successfully");
-            history.push("/admin/reviews");
+            navigate("/admin/reviews");
             dispatch({ type: DELETE_REVIEW_RESET });
         }
     }, [dispatch, alert, error, deleteError, history, isDeleted, productId]);

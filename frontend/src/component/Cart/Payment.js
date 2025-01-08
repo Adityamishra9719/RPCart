@@ -18,10 +18,11 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { createOrder, clearErrors } from "../../actions/orderAction";
+import { useNavigate } from "react-router-dom";
 
-const Payment = ({ history }) => {
+const Payment = () => {
     const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const alert = useAlert();
     const stripe = useStripe();
@@ -47,8 +48,10 @@ const Payment = ({ history }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        console.log("Submit handler triggered");
 
         payBtn.current.disabled = true;
+        console.log("Payment button disabled");
 
         try {
             const config = {
@@ -56,16 +59,20 @@ const Payment = ({ history }) => {
                     "Content-Type": "application/json",
                 },
             };
+            console.log("Sending payment request to backend");
             const { data } = await axios.post(
-                "/api/v1/payment/process",
+                `${process.env.REACT_APP_BACKEND_URL}/api/v1/payment/process`,
                 paymentData,
-                config
+                { ...config, withCredentials: true }
             );
+            console.log("Received response from backend", data);
 
             const client_secret = data.client_secret;
+            console.log("Client secret received", client_secret);
 
             if (!stripe || !elements) return;
 
+            console.log("Confirming card payment");
             const result = await stripe.confirmCardPayment(client_secret, {
                 payment_method: {
                     card: elements.getElement(CardNumberElement),
@@ -85,24 +92,28 @@ const Payment = ({ history }) => {
 
             if (result.error) {
                 payBtn.current.disabled = false;
-
+                console.log("Payment error", result.error.message);
                 alert.error(result.error.message);
             } else {
                 if (result.paymentIntent.status === "succeeded") {
+                    console.log("Payment succeeded", result.paymentIntent);
                     order.paymentInfo = {
                         id: result.paymentIntent.id,
                         status: result.paymentIntent.status,
                     };
 
                     dispatch(createOrder(order));
+                    console.log("Order created", order);
 
-                    history.push("/success");
+                    navigate("/success");
                 } else {
+                    console.log("Payment processing issue");
                     alert.error("There's some issue while processing payment ");
                 }
             }
         } catch (error) {
             payBtn.current.disabled = false;
+            console.log("Catch block error", error.response.data.message);
             alert.error(error.response.data.message);
         }
     };

@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
@@ -14,7 +14,7 @@ import { DELETE_USER_RESET } from "../../constants/UserConstants";
 
 const UsersList = ({ history }) => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const alert = useAlert();
 
     const { error, users } = useSelector((state) => state.allUsers);
@@ -42,7 +42,7 @@ const UsersList = ({ history }) => {
 
         if (isDeleted) {
             alert.success(message);
-            history.push("/admin/users");
+            navigate("/admin/users");
             dispatch({ type: DELETE_USER_RESET });
         }
 

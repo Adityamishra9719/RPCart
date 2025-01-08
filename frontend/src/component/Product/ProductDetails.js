@@ -2,13 +2,12 @@ import React, { Fragment, useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getProductDetails, clearErrors, newReview, } from "../../actions/productAction";
-// import ReactStars from "react-rating-stars-component";
+import { getProductDetails, clearErrors, newReview } from "../../actions/productAction";
 import ReviewCard from "./ReviewCard.js"
 import Loader from "../layout/Loader/Loader"
 import { useAlert } from "react-alert"
 import MetaData from "../layout/MetaData";
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Import useParams
 import { addItemsToCart } from "../../actions/cartAction";
 import {
     Dialog,
@@ -20,53 +19,40 @@ import {
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
-
-
-const ProductDetails = ({ match }) => {
+const ProductDetails = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
-    // const { id } = useParams();
-    // console.log(id)
+    const { id } = useParams(); // Use useParams to get the product ID
 
     const { product, loading, error } = useSelector((state) => state.productDetails);
+    const { success, error: reviewError } = useSelector((state) => state.newReview);
 
-    const { success, error: reviewError } = useSelector(
-        (state) => state.newReview
-    );
-    
-    
-
-
-    const options ={
-        size:"large",
-        value:product.ratings,
-        readOnly:true,
-        precision:0.5,
+    const options = {
+        size: "large",
+        value: product.ratings,
+        readOnly: true,
+        precision: 0.5,
     };
-
 
     const [quantity, setQuantity] = useState(1);
     const [open, setOpen] = useState(false);
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState("");
 
-
     const increaseQuantity = () => {
         if (product.stock <= quantity) return;
-
         const qty = quantity + 1;
         setQuantity(qty);
     };
 
     const decreaseQuantity = () => {
         if (quantity <= 1) return;
-
         const qty = quantity - 1;
         setQuantity(qty);
     };
 
     const addToCartHandler = () => {
-        dispatch(addItemsToCart(match.params.id, quantity));
+        dispatch(addItemsToCart(id, quantity)); // Use id here
         alert.success("Item Added TO Cart");
     };
 
@@ -76,16 +62,12 @@ const ProductDetails = ({ match }) => {
 
     const reviewSubmitHandler = () => {
         const myForm = new FormData();
-
         myForm.set("rating", rating);
         myForm.set("comment", comment);
-        myForm.set("productId", match.params.id);
-
+        myForm.set("productId", id); // Use id here
         dispatch(newReview(myForm));
-
         setOpen(false);
     };
-
 
     useEffect(() => {
         if (error) {
@@ -94,17 +76,17 @@ const ProductDetails = ({ match }) => {
         }
 
         if (reviewError) {
-            alert.error(error);
+            alert.error(reviewError);
             dispatch(clearErrors());
         }
         
-        if(success) {
+        if (success) {
             alert.success("Review Submitted successfully");
-            dispatch({type:NEW_REVIEW_RESET});
+            dispatch({ type: NEW_REVIEW_RESET });
         }
 
-        dispatch(getProductDetails(match.params.id));
-    }, [dispatch, match.params.id, error, alert,reviewError, success]);
+        dispatch(getProductDetails(id)); // Use id here
+    }, [dispatch, id, error, alert, reviewError, success]);
 
     return (
         <Fragment>

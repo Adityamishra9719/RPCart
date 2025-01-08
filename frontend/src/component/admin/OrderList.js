@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
@@ -17,6 +17,7 @@ import {
 import { DELETE_ORDER_RESET } from "../../constants/orderConstants";
 
 const OrderList = ({ history }) => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const alert = useAlert();
@@ -42,7 +43,7 @@ const OrderList = ({ history }) => {
 
         if (isDeleted) {
             alert.success("Order Deleted Successfully");
-            history.push("/admin/orders");
+            navigate("/admin/orders");
             dispatch({ type: DELETE_ORDER_RESET });
         }
 

@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom"; // Add this import
 import {
     clearErrors,
     updateProduct,
@@ -16,9 +17,11 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
-const UpdateProduct = ({ history, match }) => {
+const UpdateProduct = ({ history }) => { // Remove match from props
+    const navigate= useNavigate(); // Add this line
     const dispatch = useDispatch();
     const alert = useAlert();
+    const { id: productId } = useParams(); // Use useParams to get productId
 
     const { error, product } = useSelector((state) => state.productDetails);
 
@@ -47,8 +50,6 @@ const UpdateProduct = ({ history, match }) => {
         "SmartPhones",
     ];
 
-    const productId = match.params.id;
-
     useEffect(() => {
         if (product && product._id !== productId) {
             dispatch(getProductDetails(productId));
@@ -72,7 +73,7 @@ const UpdateProduct = ({ history, match }) => {
 
         if (isUpdated) {
             alert.success("Product Updated Successfully");
-            history.push("/admin/products");
+            navigate("/admin/products");
             dispatch({ type: UPDATE_PRODUCT_RESET });
         }
     }, [dispatch,alert,error,history,isUpdated,productId,product,updateError,]);
